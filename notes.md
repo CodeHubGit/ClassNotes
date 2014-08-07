@@ -38,4 +38,41 @@
   * Any database that takes SQL (**s**tructured **q**uery **l**anguage
    * ' where username = "alex" ' - returns data that fits given command)
    * every db has own commands
-#todo finish here
+    * problem: if db is updated, old code will break
+* ORM - **O**bject **R**elational **M**odel
+ * someone wrote code that will generate SQL code for you
+  * important for when db is updated
+* noSQL  -->  Doesn't take SQL but JavaScript
+ * **EX** MongoDB or Couch Database
+ * 100x slower for writing than SQL but 100x faster for readings
+  * Most applications read more than write, so a write-heavy app needs SQL
+* CRUD - **C**reate **R**ead **U**pdate and **D**elete - 4 main db operations
+
+##What is good code?
+* Highly modular - one piece works in a lot of places and can work in other code
+ * **EX** libraries are very modular
+* Separation of Concerns (SoC) - non-overlapping interests, different functions deal with different parts of code
+* Design patterns - common patterns that apply to diff programming languages and frameworks
+* DRY - **D**on't **R**epeat **Y**ourself - do it right the first time so you don't have to change it anywhere else
+* Conventions - patterns that community has decided is the best way to write code, not enforced by language
+
+##Design patterns
+* Model View Controller -> **MVC** (most used in class)
+ * model = raw data
+ * view = user interface (HTML, CSS on front end, API on backend)
+ * controller = layer that translates between model and view  --> takes action
+  * routes = endpoints - user view of server functionality
+   * most of the time we don't want the model and view to talk to each other (modular, SoC)
+   * **EX** following this pattern means db could be swapped out from Mongo to mySql and view would not have to change
+  * API - **A**plication **P**rogramming **I**nterface (new method of program communication)
+   * JSON - **J**ava**S**cript **O**bject **N**otation - format of data sent over the web
+  * **REST**ful - how we interact with APIs
+   * get (recieve)
+   * post (create)
+   * put (update)
+   * delete (remove)
+   * Similar to CRUD but for apis
+**VIEW**    **Controller**    **MODEL**
+**frontend** -- **Api** -- **backend**
+
+##todo finish here
